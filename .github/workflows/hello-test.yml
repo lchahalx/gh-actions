@@ -1,12 +1,37 @@
-name: test
+#name: test
+
+#on:
+#  push:
+#jobs:
+ # hello-job:
+ #   runs-on: ubuntu-latest
+    
+ #   steps:
+  #  - name: Echo message
+  #    run: echo "Hello this is test"
+
+name: Build Job
 
 on:
   push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
 jobs:
-  hello-job:
+  build:
     runs-on: ubuntu-latest
     
     steps:
-    - name: Echo message
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Echo hello message
       run: echo "Hello this is test"
-  
+      
+    - name: List files
+      run: ls -la
+    
+      
+    - name: Build complete
+      run: echo "Build job completed successfully"
