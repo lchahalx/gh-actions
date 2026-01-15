@@ -15,7 +15,7 @@ name: lp-test
 on:
   #push:
   schedule:
-    - cron: "* * * * *" 
+    - cron: "0 */12 * * *" 
   workflow_dispatch: #manual trigger
 
 jobs:
