@@ -14,11 +14,8 @@ name: lp-test
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
   schedule:
-    - cron: "*/2 * * * *" 
+    - cron: "*/5 * * * *" 
 
 jobs:
   build:
